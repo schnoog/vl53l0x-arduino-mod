@@ -10,10 +10,10 @@
 #define ST_WAIT_RANGE           2       // Wait for the sensor to send the range read.// <----------------------------------------------------------------HERE
 
 
-class VL53L0X
+class VL53L0X_mod
 {
   public:
-    // register addresses from API vl53l0x_device.h (ordered as listed there)
+    // register addresses from API VL53L0X_mod_device.h (ordered as listed there)
     enum regAddr
     {
       SYSRANGE_START                              = 0x00,
@@ -103,7 +103,7 @@ class VL53L0X
 
     uint8_t last_status; // status of last I2C transmission
 
-    VL53L0X();
+    VL53L0X_mod();
 
     void setBus(TwoWire * bus) { this->bus = bus; }
     TwoWire * getBus() { return bus; }
@@ -167,7 +167,7 @@ class VL53L0X
 	uint8_t status_no_bloking;
     uint16_t timeout_start_ms;
 
-    uint8_t stop_variable; // read by init and used when starting measurement; is StopVariable field of VL53L0X_DevData_t structure in API
+    uint8_t stop_variable; // read by init and used when starting measurement; is StopVariable field of VL53L0X_mod_DevData_t structure in API
     uint32_t measurement_timing_budget_us;
 
     bool getSpadInfo(uint8_t * count, bool * type_is_aperture);

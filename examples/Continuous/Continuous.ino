@@ -5,9 +5,9 @@ vl53l0x_ContinuousRanging_Example.c from the VL53L0X API.
 The range readings are in units of mm. */
 
 #include <Wire.h>
-#include <VL53L0X.h>
+#include <VL53L0X_mod.h>
 
-VL53L0X sensor;
+VL53L0X_mod sensor;
 
 void setup()
 {
